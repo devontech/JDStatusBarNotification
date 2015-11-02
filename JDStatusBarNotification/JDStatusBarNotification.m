@@ -191,11 +191,7 @@
 - (UIView*)showWithStatus:(NSString *)status
                     style:(JDStatusBarStyle*)style;
 {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 80000 // only when deployment target is before iOS 8
-	// first, check if status bar is visible at all
-	// Don't do on iOS 8 or later as then the status bar is e.g. also hidden in landscape on iPhones
 	if ([UIApplication sharedApplication].statusBarHidden) return nil;
-#endif
 	
     // prepare for new style
     if (style != self.activeStyle) {
